@@ -28,7 +28,7 @@ class ApiModule {
             .create()
 
         return Retrofit.Builder()
-            .baseUrl("https://meta.musinsa.com")
+            .baseUrl(Companion.baseUrl)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .addConverterFactory(EnumConverterFactory())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -39,6 +39,10 @@ class ApiModule {
     @Singleton
     @Provides
     fun provideContentsApiService(@LookOnApi retrofit: Retrofit): ContentsApiService = retrofit.create(ContentsApiService::class.java)
+
+    companion object {
+        private const val baseUrl = "https://meta.musinsa.com"
+    }
 }
 
 @Qualifier

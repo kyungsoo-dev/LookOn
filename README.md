@@ -47,7 +47,7 @@ Github Repository를 Clone 한 뒤, Android Studio IDE에서 Run 'app' 버튼을
  ┣ 📂 di                # Hilt 의존성 주입 설정
  ┣ 📂 domain            # 데이터 클래스 모음
  ┣ 📂 extension         # 확장 함수 모음
- ┣ 📂 http              # 데이터 클래스 모음
+ ┣ 📂 http              # retrofit 관련 유용한 팩토리 모음
  ┣ 📂 repository        # 레포지토리 클래스 모음
  ┣ 📂 storage           # 데이터 저장 관련 클래스 모음
  ┣ 📂 type              # Enum 클래스 모음

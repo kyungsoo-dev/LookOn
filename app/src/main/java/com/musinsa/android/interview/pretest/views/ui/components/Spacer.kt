@@ -1,4 +1,4 @@
-package com.musinsa.android.interview.pretest.views.ui.theme
+package com.musinsa.android.interview.pretest.views.ui.components
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height

@@ -13,11 +13,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import com.musinsa.android.interview.pretest.R
 import com.musinsa.android.interview.pretest.domain.Header
-import com.musinsa.android.interview.pretest.views.ui.theme.titleText
+import com.musinsa.android.interview.pretest.views.ui.components.hspace
+import com.musinsa.android.interview.pretest.views.ui.components.titleText
 import java.net.URL
 
 @Composable
@@ -37,15 +40,17 @@ fun HeaderView(
         Row(
             modifier = Modifier.fillMaxWidth()
                 .padding(
-                    horizontal = 16.dp,
+                    horizontal = 8.dp,
                     vertical = 12.dp
                 ),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             titleText(header.title, Modifier.widthIn(max = 200.dp))
+            hspace(8)
             header.iconURL?.let {
                 AsyncImage(
+                    modifier = Modifier.align(Alignment.CenterVertically),
                     model = it.toString(),
                     contentDescription = ""
                 )
@@ -56,7 +61,7 @@ fun HeaderView(
                     modifier = Modifier.clickable { onClick(it) },
                     textAlign = TextAlign.End,
                     color = Color.LightGray,
-                    text = "전체"
+                    text = stringResource(R.string.header_link)
                 )
             }
         }

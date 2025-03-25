@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">LookOn</string>
+    <string name="coupon">쿠폰</string>
+    <string name="header_link">전체</string>
 </resources>

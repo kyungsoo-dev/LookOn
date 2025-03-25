@@ -1,15 +1,17 @@
-package com.musinsa.android.interview.pretest.views.ui.theme
+package com.musinsa.android.interview.pretest.views.ui.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import androidx.compose.ui.text.style.TextOverflow
 import com.musinsa.android.interview.pretest.utils.formatToKoreanWon
+import com.musinsa.android.interview.pretest.views.ui.theme.BlueGray700
+import com.musinsa.android.interview.pretest.views.ui.theme.Gray500
 
 @Composable
 fun titleText(
@@ -18,8 +20,21 @@ fun titleText(
 ) {
     Text(
         modifier = modifier,
-        fontWeight = FontWeight.Bold,
-        textAlign = TextAlign.Start,
+        style = MaterialTheme.typography.titleMedium,
+        fontStyle = FontStyle.Normal,
+        textAlign = TextAlign.Justify,
+        color = BlueGray700,
+        text = title
+    )
+}
+
+@Composable
+fun footerText(
+    title: String,
+    modifier : Modifier = Modifier
+) {
+    Text(
+        style = MaterialTheme.typography.labelMedium,
         text = title
     )
 }
@@ -31,8 +46,8 @@ fun BrandNameText(
 ) {
     Text(
         modifier = modifier.fillMaxWidth(),
-        color = Color.LightGray,
-        fontSize = 12.sp,
+        color = Gray500,
+        style = MaterialTheme.typography.bodyMedium,
         text = brandName
     )
 }
@@ -46,8 +61,7 @@ fun PriceText(
     Text(
         modifier = modifier,
         textAlign = textAlign,
-        fontSize = 16.sp,
-        fontWeight = FontWeight.Bold,
+        style = MaterialTheme.typography.labelMedium,
         text = formatToKoreanWon(price)
     )
 }
@@ -62,7 +76,7 @@ fun RateText(
         modifier = modifier,
         textAlign = textAlign,
         color = Color.Red,
-        fontSize = 12.sp,
+        style = MaterialTheme.typography.bodySmall,
         text = rate.toString() + "%"
     )
 }

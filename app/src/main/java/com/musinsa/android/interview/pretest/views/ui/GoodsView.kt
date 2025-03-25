@@ -15,14 +15,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
+import com.musinsa.android.interview.pretest.R
 import com.musinsa.android.interview.pretest.domain.Goods
 import com.musinsa.android.interview.pretest.views.ui.theme.Indigo500
-import com.musinsa.android.interview.pretest.views.ui.theme.BrandNameText
-import com.musinsa.android.interview.pretest.views.ui.theme.PriceText
-import com.musinsa.android.interview.pretest.views.ui.theme.RateText
+import com.musinsa.android.interview.pretest.views.ui.components.BrandNameText
+import com.musinsa.android.interview.pretest.views.ui.components.PriceText
+import com.musinsa.android.interview.pretest.views.ui.components.RateText
 import java.net.URL
 
 @Composable
@@ -58,19 +60,20 @@ fun GoodsView(
                             ),
                         color = Color.White,
                         fontSize = 12.sp,
-                        text = "쿠폰",
+                        text = stringResource(R.string.coupon),
                     )
                 }
             }
         }
         BrandNameText(
             goods.brandName,
-            Modifier.padding(top = 8.dp, start = 4.dp, bottom = 0.dp, end = 4.dp)
+            Modifier.padding(top = 12.dp, start = 4.dp, bottom = 4.dp, end = 4.dp)
         )
         Row(
             modifier = Modifier.fillMaxWidth()
-                .padding(top = 0.dp, start = 4.dp, bottom = 4.dp, end = 16.dp),
-            horizontalArrangement = Arrangement.SpaceBetween
+                .padding(top = 4.dp, start = 4.dp, bottom = 4.dp, end = 16.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
         ) {
             PriceText(goods.price)
             RateText(goods.saleRate)

@@ -8,31 +8,30 @@ import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.musinsa.android.interview.pretest.domain.Banners
-import com.musinsa.android.interview.pretest.views.ui.theme.vspace
+import com.musinsa.android.interview.pretest.views.ui.components.vspace
+import com.musinsa.android.interview.pretest.views.ui.theme.DeepOrange200
 import kotlinx.coroutines.delay
-import timber.log.Timber
 import java.net.URL
 
 @Composable
@@ -106,6 +105,16 @@ private fun bannerUI(
             contentDescription = "",
             contentScale = ContentScale.FillWidth
         )
+        if(banners.keyword.isNotEmpty()) {
+            Text(
+                modifier = Modifier.align(Alignment.BottomStart).padding(horizontal = 16.dp, vertical = 8.dp),
+                style = MaterialTheme.typography.labelLarge,
+                fontStyle = FontStyle.Normal,
+                fontSize = 18.sp,
+                color = DeepOrange200,
+                text = banners.keyword
+            )
+        }
         Column (
             modifier = Modifier
                 .fillMaxWidth()
@@ -120,7 +129,7 @@ private fun bannerUI(
             Text(
                 text = banners.title,
                 fontSize = 24.sp,
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.Medium,
                 color = Color.White,
                 textAlign = TextAlign.Center,
             )

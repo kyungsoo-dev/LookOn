@@ -19,13 +19,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.musinsa.android.interview.pretest.type.ContentsType
 import com.musinsa.android.interview.pretest.views.ui.ContentsView
 import com.musinsa.android.interview.pretest.views.ui.theme.LookOnTheme
-import com.musinsa.android.interview.pretest.views.ui.theme.vspace
+import com.musinsa.android.interview.pretest.views.ui.components.vspace
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

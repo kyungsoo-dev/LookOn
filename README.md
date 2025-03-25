@@ -16,7 +16,7 @@
 
 ## SDK 버전 
 - minSDK : 28
-- targetSDK 35
+- targetSDK : 35
 
 ## 🛠 기술 스택
 - **Language**: Kotlin
@@ -31,7 +31,9 @@ git clone https://github.com/kyungsoo-dev/LookOn.git
 cd LookOn
 ./gradlew build
 ```
+
 또는 
+
 Github Repository를 Clone 한 뒤, Android Studio IDE에서 Run 'app' 버튼을 클릭하여 실행하실 수 있습니다.
 
 ## 🏗️ 아키텍처
@@ -54,6 +56,3 @@ Github Repository를 Clone 한 뒤, Android Studio IDE에서 Run 'app' 버튼을
     ┣ 📂 components     # 재사용을 고려한 UI들을 모아둔 클래스 모음
     ┗ 📂 theme          # 디자인 시스템 클래스 모음
 ```
-
-## 📜 라이선스
-이 프로젝트는 MIT 라이선스를 따릅니다. [자세히 보기](LICENSE)
